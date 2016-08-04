@@ -1,0 +1,12 @@
+<div class="header">
+  <%= link_to "CABS", root_path ,:class=>"heading-title"%>
+  <ul class="nav nav-pills pull-right menu-list">
+      <% if user_signed_in? %>
+          <li><%= link_to "HOME",root_path,:class=> "menu-item-text" %></li>
+          <li><%= link_to "SIGN OUT", destroy_user_session_path, :method => :delete ,:class=> "menu-item-text" %></li>
+      <% else %>
+          <li><%= link_to "LOGIN", new_user_session_path, :class=> "menu-item-text"  %></li>
+          <li><%= link_to "SIGN UP", new_user_registration_path, :class=> "menu-item-text" %></li>
+      <% end %>
+    </ul>
+</div>
